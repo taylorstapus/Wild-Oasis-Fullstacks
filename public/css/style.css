@@ -42,11 +42,15 @@ header {
   background-position: center;
   color: white;
   text-align: center;
-  padding: 25px ;
+  padding: 25px 0 0 0; /* Top padding only */
+}
+
+.header-content {
+  padding-bottom: 20px; /* Space between logo/title and nav */
 }
 
 .logo {
-  width: 200px; 
+  width: 200px;
   height: auto;
 }
 
@@ -61,21 +65,18 @@ h2 {
   text-underline-offset: 4px;
 }
 
-nav {
+header nav {
   background-color: #3b5d3a;
-  padding: 10px;
+  padding: 10px 0;
   text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3); /* Optional: adds depth */
 }
 
-nav a {
+header nav a {
   color: white;
   margin: 0 15px;
   text-decoration: none;
   font-weight: bold;
-}
-
-nav a:hover {
-  text-decoration: underline;
 }
 
 /*=========================================
@@ -301,4 +302,3 @@ button:hover {
 ul {
   padding-left: 20px;
 }
-
