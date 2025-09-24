@@ -3,11 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  
-  <title>Wild Oasis-Meet The Residents</title>
-  <meta name="description" content="Meet the wolves who live at Wild Oasis Sanctuary.">
   <meta name="author" content="">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="css/style.css">
@@ -20,47 +16,20 @@
 
 <main>
 
-  <!-- Wolf Profiles -->
-  <section class="wolf-profile">
-    <div class="wolf-image">
-      <img src="/img/Oracle.jpg" alt="Oracle the Wolf" class="wolf-photo">
-    </div>
-    <div class="wolf-info">
-      <h2>Oracle</h2>
-      <p>Oracle was rescued from a roadside attraction where she lived in a small cage. Since arriving at Wild Oasis, she's become one of the most curious and vocal wolves in the pack. She loves lounging in the shade and howling at sunset.</p>
-    </div>
-  </section>
-
-  <section class="wolf-profile">
-    <div class="wolf-image">
-      <img src="/img/Chaos.jpg" alt="Chaos the Wolf" class="wolf-photo">
-    </div>
-    <div class="wolf-info">
-      <h2>Chaos</h2>
-      <p>Chaos was found injured and alone in the wild after being separated from his pack. Now healed, he’s a calm and wise presence among the other wolves, often seen watching over them from his favorite hill.</p>
-    </div>
-  </section>
-
-  <section class="wolf-profile">
-    <div class="wolf-image">
-      <img src="/img/Shasta.jpg" alt="Shasta the Wolf" class="wolf-photo">
-    </div>
-    <div class="wolf-info">
-      <h2>Shasta</h2>
-      <p>Shasta was surrendered by a private owner who realized wolves don’t belong in backyards. She has since embraced the sanctuary life, making fast friends with Oracle and learning how to be part of a real pack.</p>
-    </div>
-  </section>
-
-  <section class="wolf-profile">
-    <div class="wolf-image">
-      <img src="/img/LittleBrother.jpg" alt="Little Brother the Wolf" class="wolf-photo">
-    </div>
-    <div class="wolf-info">
-      <h2>Little Brother</h2>
-      <p>Little Brother was born in captivity but never knew a safe or loving home until he came to Wild Oasis. He’s playful, full of energy, and loves splashing in the pond on hot days.</p>
-    </div>
-  </section>
+  {{#each animals}}
+    <section class="wolf-profile">
+      <div class="wolf-image">
+        <img src="/img/{{this.img}}" alt="{{this.name}} the Wolf" class="wolf-photo">
+      </div>
+      <div class="wolf-info">
+        <h2>{{this.name}}</h2>
+        <p>{{this.description}}</p>
+      </div>
+    </section>
+  {{/each}}
 
 </main>
 
 {{> footer}}
+</body>
+</html>
