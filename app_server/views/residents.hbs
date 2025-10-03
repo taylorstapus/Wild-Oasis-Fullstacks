@@ -19,7 +19,7 @@
   {{#each animals}}
     <section class="wolf-profile">
       <div class="wolf-image">
-        <img src="/img/{{this.img}}" alt="{{this.name}} the Wolf" class="wolf-photo">
+       <a href="/api/animals/{{this.code}}"></a> <img src="/img/{{this.img}}" alt="{{this.name}} the Wolf" class="wolf-photo">
       </div>
       <div class="wolf-info">
         <h2>{{this.name}}</h2>
