@@ -5,11 +5,13 @@ const animalsController = require("../controllers/animals");
 
 router
     .route("/animals")
-    .get(animalsController.animalsList);
+    .get(animalsController.animalsList)
+    .post(animalsController.animalsAddAnimal);
 
 // Get Method routes 
 router
     .route('/animals/:animalCode')
-    .get(animalsController.animalsFindByCode);
+    .get(animalsController.animalsFindByCode)
+    .put(animalsController.animalsUpdateAnimal);
     
 module.exports = router;

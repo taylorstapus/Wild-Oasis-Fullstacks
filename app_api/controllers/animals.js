@@ -35,7 +35,62 @@ const animalsFindByCode = async(req, res) => {
   } 
 };
 
+//Adds animals
+const animalsAddAnimal = async(req, res) => {
+  const newAnimal = new Animal ({
+    code: req.body.code,
+    name: req.body.name,
+    species: req.body.species,
+    img: req.body.img,
+    description: req.body.description
+  });
+
+  const q = await newAnimal.save();
+
+    if (!q)
+    {
+      return res
+        .status(400)
+        .json(err);
+    } else {
+      return res
+        .status(201)
+        .json(q);
+
+    }
+};
+
+//Updates Animals
+const animalsUpdateAnimal = async(req, res) => {
+  const q = await Model         
+  .findOneAndUpdate(             
+    { 'code' : req.params.animalCode },             
+    {                 
+    code: req.body.code,
+    name: req.body.name,
+    species: req.body.species,
+    img: req.body.img,
+    description: req.body.description             
+    }          
+  )         
+  .exec();
+
+  if(!q)         
+    { // Database returned no data             
+      return res                 
+      .status(400)                 
+      .json(err);
+
+  } else { // Return resulting updated animal             
+    return res                 
+    .status(201)                 
+    .json(q);         
+  }  
+};
+
 module.exports = {
   animalsList, 
-  animalsFindByCode
+  animalsFindByCode,
+  animalsAddAnimal,
+  animalsUpdateAnimal
 };

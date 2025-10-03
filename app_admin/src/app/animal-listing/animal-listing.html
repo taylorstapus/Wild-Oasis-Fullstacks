@@ -1,0 +1,8 @@
+<div>
+    <button (click)="addAnimal()" class="btn btn-info">Add Animal</button>
+ </div>
+<div class="row">     
+    <div *ngFor="let animal of animals" class="col-md-4">
+        <app-animal-card [animal]="animal" class="card-deck mt-2"></app-animal-card>              
+    </div>  
+</div>
