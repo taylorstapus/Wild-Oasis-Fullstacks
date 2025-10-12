@@ -1,0 +1,22 @@
+.logo-img {
+  height: 40px;   /* Adjust logo size */
+  width: auto;
+}
+
+.navbar {
+  font-size: 1rem;
+}
+
+.navbar-brand span {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.nav-link {
+  margin-right: 1rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}

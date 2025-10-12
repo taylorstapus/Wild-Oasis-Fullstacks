@@ -6,6 +6,7 @@ import { AnimalData } from '../services/animal-data';
 import { Animal } from '../models/animal';
 
 import { Router } from '@angular/router';
+import { Authentication } from '../services/authentication';
 
 @Component({
   selector: 'app-animal-listing',
@@ -21,7 +22,8 @@ export class AnimalListing implements OnInit {
   message:string = '';
 
   constructor(private animalDataService: AnimalData,
-    private router: Router
+    private router: Router,
+    private authenticationService: Authentication
   ) { 
     console.log('animal-listing constructor'); 
   } 
@@ -49,6 +51,10 @@ export class AnimalListing implements OnInit {
         }       
       })   
   }
+
+   public isLoggedIn() { 
+    return this.authenticationService.isLoggedIn(); 
+  } 
   
   ngOnInit(): void {
     console.log('ngOnInit');

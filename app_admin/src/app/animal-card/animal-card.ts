@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { Animal } from '../models/animal'; 
+import { Authentication} from '../services/authentication'; 
 
 @Component({ 
   selector: 'app-animal-card', 
@@ -12,7 +13,11 @@ import { Animal } from '../models/animal';
 }) 
 export class AnimalCard implements OnInit { 
   @Input('animal') animal: any; 
-  constructor(private router: Router) {} 
+  constructor(
+    private router: Router,
+    private authenticationService: Authentication
+  ) {} 
+
   ngOnInit(): void { 
   }
   
@@ -20,5 +25,9 @@ export class AnimalCard implements OnInit {
     localStorage.removeItem('animalCode');
     localStorage.setItem('animalCode', animal.code);
     this.router.navigate(['edit-animal']);
+  }
+
+  public isLoggedIn() { 
+    return this.authenticationService.isLoggedIn(); 
   }
 } 
